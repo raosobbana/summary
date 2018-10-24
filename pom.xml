@@ -59,13 +59,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>com.motocho.portfolio.summary.SummaryApplication</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
