@@ -1,11 +1,11 @@
 package com.motocho.portfolio.summary.dao.trends;
 
 public class PortfolioTrends {
-	private DayTrends day;
-	private WeekTrends week;
-	private MonthTrends month;
-	private YtdTrends ytd;
-	private AllTrends all;
+	private DayTrends day;//day
+	private WeekTrends week;//wek
+	private MonthTrends month;//mnths
+	private YtdTrends ytd;//ytd
+	private AllTrends all;//all
 
 	public DayTrends getDay() {
 		return day;

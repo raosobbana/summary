@@ -1,21 +1,14 @@
 package com.motocho.portfolio.summary.dao.trends;
 
 public class FifteenMinutes {
-	private String coinName;
-	private String coinValue;
-	private String timeStamp;
+	private String portfolioValue;//prtfVal
+	private String timeStamp;//tmStmp
 
-	public String getCoinName() {
-		return coinName;
+	public String getPortfolioValue() {
+		return portfolioValue;
 	}
-	public void setCoinName(String coinName) {
-		this.coinName = coinName;
-	}
-	public String getCoinValue() {
-		return coinValue;
-	}
-	public void setCoinValue(String coinValue) {
-		this.coinValue = coinValue;
+	public void setPortfolioValue(String portfolioValue) {
+		this.portfolioValue = portfolioValue;
 	}
 	public String getTimeStamp() {
 		return timeStamp;

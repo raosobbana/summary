@@ -1,9 +1,9 @@
 package com.motocho.portfolio.summary.dao;
 
 public class UnrealizedSummary {
-	private double shortTerm;
-	private double longTerm;
-	private double total;
+	private double shortTerm;//shrTrm
+	private double longTerm;//lngTrm
+	private double total;//ttl
 
 	public double getShortTerm() {
 		return shortTerm;

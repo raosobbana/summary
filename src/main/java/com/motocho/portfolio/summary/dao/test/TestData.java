@@ -2,16 +2,67 @@ package com.motocho.portfolio.summary.dao.test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.motocho.portfolio.summary.dao.coinperfrm.PortfolioCoinPerformance;
 import com.motocho.portfolio.summary.dao.trends.DayTrends;
 import com.motocho.portfolio.summary.dao.trends.FifteenMinutes;
 import com.motocho.portfolio.summary.dao.trends.PortfolioTrends;
+import com.motocho.portfolio.summary.service.SummaryServiceImpl;
 
 public class TestData {
+	/*public static void main(String[] args) {
+		//double val = 15000*Math.random();
+		
+		//double val1 = 15000*Math.random();
+		//System.out.println(val+" "+Math.round(val1));
+		TestData obj = new TestData();
+		for(int i = 0; i < 10; i++){
+			if(i<=5) {
+				System.out.println("User1 :"+obj.getRandomCoinName(1));
+			}else {
+				System.out.println("User2 :"+obj.getRandomCoinName(2));
+			}
+		}
+		
+		SummaryServiceImpl impl= new SummaryServiceImpl();
+		//PortfolioTrends portfolioTrends= impl.getSummaryTrends(2);
+		//PortfolioSummary portfolioSummary = impl.getSummary(2);
+		//PortfolioPostion portfolioPostion = impl.getPositions(1);
+		PortfolioCoinPerformance portfolioCoinPerformance = 
+				impl.getCoinPerformance(2);
+		ObjectMapper json = new ObjectMapper();
+		System.out.println(json.valueToTree(portfolioCoinPerformance));
 	
-	public static void main(String[] args) {
-		/*PortfolioSummary portfolioSummary = new PortfolioSummary();
+	}*/
+
+	private String getRandomCoinName(long userId) {
+		List<String> user1Coins = new ArrayList();
+		user1Coins.add("Bitcoin");
+		user1Coins.add("Ethereum");
+		user1Coins.add("Litecoin");
+		user1Coins.add("Ripple");
+		user1Coins.add("Cardano");
+		
+		List<String> user2Coins = new ArrayList();
+		user2Coins.add("Bitcoin");
+		user2Coins.add("Ethereum");
+		user2Coins.add("Stellar");
+		if(userId==1) {
+			int coinIndex = ThreadLocalRandom.current().nextInt(user1Coins.size());	
+			//System.out.println("Coin Name User1" + user1Coins.get(coinIndex) );
+			return user1Coins.get(coinIndex);
+		}else {
+			int coinIndex = ThreadLocalRandom.current().nextInt(user2Coins.size());	
+			//System.out.println("Coin Name User1" + user2Coins.get(coinIndex) );
+			return user2Coins.get(coinIndex);
+		}  
+	}
+
+	
+	/*public static void main(String[] args) {
+		PortfolioSummary portfolioSummary = new PortfolioSummary();
 
 		Summary summary = new Summary();
 		summary.setTotalInvestment(9834.9873);
@@ -23,9 +74,9 @@ public class TestData {
 		unrealizedSummary.setTotal(74674.98);
 
 		summary.setUnrealizedSummary(unrealizedSummary);
-		portfolioSummary.setPortfolioSummary(summary);*/
+		portfolioSummary.setPortfolioSummary(summary);
 		
-		/*PortfolioPostion portfolioPostion = new PortfolioPostion();
+		PortfolioPostion portfolioPostion = new PortfolioPostion();
 		
 		List<CoinPosition> positions = new ArrayList<>();
 		CoinPosition btc = new CoinPosition();
@@ -64,9 +115,9 @@ public class TestData {
 		positions.add(ltc);
 		
 		portfolioPostion.setPositions(positions);
-		portfolioPostion.setIsType("category");*/
+		portfolioPostion.setIsType("category");
 
-		/*PortfolioCoinPerformance performance = new PortfolioCoinPerformance();
+		PortfolioCoinPerformance performance = new PortfolioCoinPerformance();
 
 		List<CoinPerformance> performances = new ArrayList<>();
 
@@ -161,7 +212,7 @@ public class TestData {
 		ltc.setTotalGains(88302.984);
 		performances.add(ltc);
 
-		performance.setPerformances(performances);*/
+		performance.setPerformances(performances);
 		PortfolioTrends portfolioTrends = new PortfolioTrends();
 		List<FifteenMinutes> minutes = new ArrayList<>();
 		TimeStamps timeStamps = new TimeStamps();
@@ -180,5 +231,5 @@ public class TestData {
 		
 		ObjectMapper obj = new ObjectMapper();
 		System.out.println(obj.valueToTree(portfolioTrends));
-	}
+	}*/
 }

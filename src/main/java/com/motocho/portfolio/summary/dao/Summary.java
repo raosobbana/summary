@@ -2,10 +2,10 @@ package com.motocho.portfolio.summary.dao;
 
 public class Summary {
 
-	private double totalInvestment;
-	private double totalCash;
-	private double totalPortfolioValue;
-	private UnrealizedSummary unrealizedSummary;
+	private double totalInvestment;//ttlInvst
+	private double totalCash;//ttlCsh
+	private double totalPortfolioValue;//ttlPrtVal
+	private UnrealizedSummary unrealizedSummary;//unrlzSum
 
 	public double getTotalInvestment() {
 		return totalInvestment;

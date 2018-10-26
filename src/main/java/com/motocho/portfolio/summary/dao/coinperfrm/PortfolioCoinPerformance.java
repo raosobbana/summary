@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PortfolioCoinPerformance {
-	private List<CoinPerformance> performances = new ArrayList<CoinPerformance>();
+	private List<CoinPerformance> performances = new ArrayList<CoinPerformance>();//perfs
 
 	public List<CoinPerformance> getPerformances() {
 		return performances;

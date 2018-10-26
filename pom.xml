@@ -6,7 +6,7 @@
 	<groupId>com.motocho.portfolio</groupId>
 	<artifactId>summary</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<packaging>jar</packaging>
 	<name>summary</name>
 
 	<parent>
@@ -58,6 +58,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.2.5.RELEASE</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -68,7 +69,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 	<description>Portfolio Summary</description>
 </project>

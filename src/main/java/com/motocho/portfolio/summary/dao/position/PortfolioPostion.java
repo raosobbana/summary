@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PortfolioPostion {
-	private List<CoinPosition> positions = new ArrayList<CoinPosition>();
-	private String isType;
+	private List<CoinPosition> positions = new ArrayList<CoinPosition>();//poss
+	private String isType;//isTyp
 
 	public List<CoinPosition> getPositions() {
 		return positions;

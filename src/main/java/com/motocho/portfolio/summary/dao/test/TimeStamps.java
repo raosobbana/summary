@@ -17,7 +17,7 @@ public class TimeStamps {
 		int k=0,j=0;
 		for(int i=0; i<120;i++) {
 			if(k<=45) {
-				Date date = new Date("Mon Oct 15 "+j+":"+k+":17 PDT 2018");
+				Date date = new Date("Mon Oct 28 "+j+":"+k+":17 PDT 2018");
 				long value = date.getTime();
 				list.add(value);
 				//System.out.println(value);

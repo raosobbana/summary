@@ -1,16 +1,16 @@
 package com.motocho.portfolio.summary.dao.coin;
 
 public class Coin {
-	private long coinId;
-	private String coinName;
-	private String coinCode;
-	private double coinValue;
-	private boolean isCoinTradable;
-	private boolean isCoinQuotable;
-	private byte decimalMaxLength;
-	private byte status;
-	private long dateCreated;
-	private long dateModified;
+	private long coinId;//coiId
+	private String coinName;//coiNme
+	private String coinCode;//coiCod
+	private double coinValue;//coiVal
+	private boolean isCoinTradable;//isTrdbl
+	private boolean isCoinQuotable;//isQutbl
+	private byte decimalMaxLength;//decMaxLen
+	private byte status;//stus
+	private long dateCreated;//dteCrt
+	private long dateModified;//dteMod
 
 	public long getCoinId() {
 		return coinId;

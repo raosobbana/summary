@@ -1,17 +1,28 @@
 package com.motocho.portfolio.summary.dao.coinperfrm;
 
 public class CoinPerformance {
-	private String coinCode;
-	private String date;
-	private double quantity;
-	private double cost;
-	private double lastPrice;
-	private double _24hourPrice;
-	private double totalValue;
-	private double _24hourValue;
-	private double YTDvalue;
-	private double totalGains;
+	private String coinName;//coiNme
+	private String coinCode;//coiCde
+	private String date;//date
+	private double quantity;//qty
+	private double cost;//cost
+	private double lastPrice;//lstPrc
+	private double _24hourPrice;//_24hrPrc
+	private byte _24hourPriceChange;
+	private double totalValue;//ttlVal
+	private double _24hourValue;//_24hrVal
+	private byte _24hourValueChange; //1 increase 2 decrease 3 nochange
+	private double YTDValue;//ytdVal
+	private byte YTDValueChange;
+	private double totalGains;//ttlGai
+	private String isType;
 
+	public String getCoinName() {
+		return coinName;
+	}
+	public void setCoinName(String coinName) {
+		this.coinName = coinName;
+	}
 	public String getCoinCode() {
 		return coinCode;
 	}
@@ -48,6 +59,12 @@ public class CoinPerformance {
 	public void set_24hourPrice(double _24hourPrice) {
 		this._24hourPrice = _24hourPrice;
 	}
+	public byte get_24hourPriceChange() {
+		return _24hourPriceChange;
+	}
+	public void set_24hourPriceChange(byte _24hourPriceChange) {
+		this._24hourPriceChange = _24hourPriceChange;
+	}
 	public double getTotalValue() {
 		return totalValue;
 	}
@@ -60,17 +77,35 @@ public class CoinPerformance {
 	public void set_24hourValue(double _24hourValue) {
 		this._24hourValue = _24hourValue;
 	}
-	public double getYTDvalue() {
-		return YTDvalue;
+	public byte get_24hourValueChange() {
+		return _24hourValueChange;
 	}
-	public void setYTDvalue(double yTDvalue) {
-		YTDvalue = yTDvalue;
+	public void set_24hourValueChange(byte _24hourValueChange) {
+		this._24hourValueChange = _24hourValueChange;
+	}
+	public double getYTDValue() {
+		return YTDValue;
+	}
+	public void setYTDValue(double yTDValue) {
+		YTDValue = yTDValue;
+	}
+	public byte getYTDValueChange() {
+		return YTDValueChange;
+	}
+	public void setYTDValueChange(byte yTDValueChange) {
+		YTDValueChange = yTDValueChange;
 	}
 	public double getTotalGains() {
 		return totalGains;
 	}
 	public void setTotalGains(double totalGains) {
 		this.totalGains = totalGains;
+	}
+	public String getIsType() {
+		return isType;
+	}
+	public void setIsType(String isType) {
+		this.isType = isType;
 	}
 
 }

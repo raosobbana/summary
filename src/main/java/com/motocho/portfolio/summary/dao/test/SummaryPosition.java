@@ -10,14 +10,14 @@ import javax.persistence.Table;
 @Table(name="position")*/
 public class SummaryPosition {
 	/*@Id*/
-	private long positionId;
-	private long accountId;
-	private double quantity;
-	private long coinId;
-	private double avaragePricePaid;
-	private String errorMessage;
-	private long dateCreated;
-	private long dateModified;
+	private long positionId;//posId
+	private long accountId;//actId
+	private double quantity;//qty
+	private long coinId;//coiId
+	private double avaragePricePaid;//avgPrcPd
+	private String errorMessage;//err
+	private long dateCreated;//dteCrt
+	private long dateModified;//dteMod
 
 	public SummaryPosition() {
 		super();

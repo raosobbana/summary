@@ -6,9 +6,9 @@ import com.motocho.portfolio.summary.dao.position.PortfolioPostion;
 import com.motocho.portfolio.summary.dao.trends.PortfolioTrends;
 
 public interface SummaryService {
-	public PortfolioSummary getSummary();
-	public PortfolioPostion getPositions();
-	public PortfolioCoinPerformance getCoinPerformance();
-	public PortfolioTrends getSummaryTrends();
+	public PortfolioSummary getSummary(long userId);
+	public PortfolioPostion getPositions(long userId);
+	public PortfolioCoinPerformance getCoinPerformance(long userId);
+	public PortfolioTrends getSummaryTrends(long userId);
 
 }

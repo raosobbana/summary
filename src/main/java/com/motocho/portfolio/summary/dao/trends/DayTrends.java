@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DayTrends {
-	private List<FifteenMinutes>  fifteenMinutes = new ArrayList<>();
+	private List<FifteenMinutes>  fifteenMinutes = new ArrayList<>();//fifMin
 
 	public List<FifteenMinutes> getFifteenMinutes() {
 		return fifteenMinutes;

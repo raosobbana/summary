@@ -9,15 +9,6 @@ import com.motocho.portfolio.summary.dao.coin.Coin;
 
 @Service
 public class CoinServiceImpl implements CoinService {
-	/*public static void main(String[] args) {
-		CoinServiceImpl coinServiceImpl = new CoinServiceImpl();
-		Coin coin1 = coinServiceImpl.getCoinCreatedDetails("XRP");
-		System.out.println("Created Time Coin Id-"+coin1.getCoinCode()+" Coin Value-"+coin1.getCoinValue());
-		Coin coin2 = coinServiceImpl.getCoinCurrentDetails("XRP");
-		System.out.println("Created Time Coin Id-"+coin2.getCoinCode()+" Coin Value-"+coin2.getCoinValue());
-		
-	}*/
-
 	/**
 	 * Coin Created details has to fetch from Our Data base
 	 * it will not come into this part of Service.
@@ -40,7 +31,7 @@ public class CoinServiceImpl implements CoinService {
 			return coin;
 		}
 	}
-	
+
 	public Coin getCoinCurrentDetails(String coinId) {
 		Coin coin = new Coin();
 		boolean isAccountAvailable = isCoinAvailable(coinId);

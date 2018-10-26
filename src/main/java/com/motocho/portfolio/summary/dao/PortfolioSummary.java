@@ -1,7 +1,7 @@
 package com.motocho.portfolio.summary.dao;
 
 public class PortfolioSummary {
-	private Summary portfolioSummary;
+	private Summary portfolioSummary;//prtfSum
 
 	public Summary getPortfolioSummary() {
 		return portfolioSummary;

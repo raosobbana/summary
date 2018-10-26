@@ -1,8 +1,8 @@
 package com.motocho.portfolio.summary.dao.account;
 
 public class Account {
-	private long accountId;
-	private double cash;
+	private long accountId;//actId
+	private double cash;//cash
 
 	public long getAccountId() {
 		return accountId;

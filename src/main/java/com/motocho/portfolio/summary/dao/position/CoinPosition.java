@@ -1,20 +1,19 @@
 package com.motocho.portfolio.summary.dao.position;
 
 public class CoinPosition {
-	private String coinCode;
-	private float perCentage;
+	private String name;//name
+	private String value;//val
 
-	public String getCoinCode() {
-		return coinCode;
+	public String getName() {
+		return name;
 	}
-	public void setCoinCode(String coinCode) {
-		this.coinCode = coinCode;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public float getPerCentage() {
-		return perCentage;
+	public String getValue() {
+		return value;
 	}
-	public void setPerCentage(float perCentage) {
-		this.perCentage = perCentage;
+	public void setValue(String value) {
+		this.value = value;
 	}
-
 }
