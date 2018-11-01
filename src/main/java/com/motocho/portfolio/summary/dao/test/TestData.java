@@ -6,8 +6,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.motocho.portfolio.summary.dao.coinperfrm.PortfolioCoinPerformance;
-import com.motocho.portfolio.summary.dao.trends.DayTrends;
-import com.motocho.portfolio.summary.dao.trends.FifteenMinutes;
 import com.motocho.portfolio.summary.dao.trends.PortfolioTrends;
 import com.motocho.portfolio.summary.service.SummaryServiceImpl;
 
@@ -27,17 +25,17 @@ public class TestData {
 		}
 		
 		SummaryServiceImpl impl= new SummaryServiceImpl();
-		//PortfolioTrends portfolioTrends= impl.getSummaryTrends(2);
+		PortfolioTrends portfolioTrends= impl.getSummaryTrends(2);
 		//PortfolioSummary portfolioSummary = impl.getSummary(2);
 		//PortfolioPostion portfolioPostion = impl.getPositions(1);
-		PortfolioCoinPerformance portfolioCoinPerformance = 
-				impl.getCoinPerformance(2);
+		//PortfolioCoinPerformance portfolioCoinPerformance = 
+		//		impl.getCoinPerformance(2);
 		ObjectMapper json = new ObjectMapper();
-		System.out.println(json.valueToTree(portfolioCoinPerformance));
+		System.out.println(json.valueToTree(portfolioTrends));
 	
 	}*/
 
-	private String getRandomCoinName(long userId) {
+	/*private String getRandomCoinName(long userId) {
 		List<String> user1Coins = new ArrayList();
 		user1Coins.add("Bitcoin");
 		user1Coins.add("Ethereum");
@@ -58,7 +56,7 @@ public class TestData {
 			//System.out.println("Coin Name User1" + user2Coins.get(coinIndex) );
 			return user2Coins.get(coinIndex);
 		}  
-	}
+	}*/
 
 	
 	/*public static void main(String[] args) {

@@ -9,6 +9,6 @@ public interface SummaryService {
 	public PortfolioSummary getSummary(long userId);
 	public PortfolioPostion getPositions(long userId);
 	public PortfolioCoinPerformance getCoinPerformance(long userId);
-	public PortfolioTrends getSummaryTrends(long userId);
+	public PortfolioTrends getSummaryTrends(long userId,String query);
 
 }

@@ -1,41 +1,15 @@
 package com.motocho.portfolio.summary.dao.trends;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PortfolioTrends {
-	private DayTrends day;//day
-	private WeekTrends week;//wek
-	private MonthTrends month;//mnths
-	private YtdTrends ytd;//ytd
-	private AllTrends all;//all
+	private List<DataTrends> data = new ArrayList<DataTrends>();
 
-	public DayTrends getDay() {
-		return day;
+	public List<DataTrends> getData() {
+		return data;
 	}
-	public void setDay(DayTrends day) {
-		this.day = day;
+	public void setData(List<DataTrends> data) {
+		this.data = data;
 	}
-	public WeekTrends getWeek() {
-		return week;
-	}
-	public void setWeek(WeekTrends week) {
-		this.week = week;
-	}
-	public MonthTrends getMonth() {
-		return month;
-	}
-	public void setMonth(MonthTrends month) {
-		this.month = month;
-	}
-	public YtdTrends getYtd() {
-		return ytd;
-	}
-	public void setYtd(YtdTrends ytd) {
-		this.ytd = ytd;
-	}
-	public AllTrends getAll() {
-		return all;
-	}
-	public void setAll(AllTrends all) {
-		this.all = all;
-	}
-
 }

@@ -15,8 +15,7 @@ import com.motocho.portfolio.summary.dao.coinperfrm.PortfolioCoinPerformance;
 import com.motocho.portfolio.summary.dao.position.CoinPosition;
 import com.motocho.portfolio.summary.dao.position.PortfolioPostion;
 import com.motocho.portfolio.summary.dao.test.TimeStamps;
-import com.motocho.portfolio.summary.dao.trends.DayTrends;
-import com.motocho.portfolio.summary.dao.trends.FifteenMinutes;
+import com.motocho.portfolio.summary.dao.trends.DataTrends;
 import com.motocho.portfolio.summary.dao.trends.PortfolioTrends;
 
 @Service
@@ -282,21 +281,40 @@ public class SummaryServiceImpl implements SummaryService {
 	}
 
 	@Override
-	public PortfolioTrends getSummaryTrends(long userId) {
+	public PortfolioTrends getSummaryTrends(long userId, String str) {
 		PortfolioTrends portfolioTrends = new PortfolioTrends();
-		List<FifteenMinutes> minutes = new ArrayList<>();
+		List<DataTrends> trends = new ArrayList<>();
 		TimeStamps timeStamps = new TimeStamps();
-		List<Long> values = timeStamps.getDateValues();
-		for(long value: values) {
-			FifteenMinutes min = new FifteenMinutes();
+		List<Long> dataValues = new ArrayList<Long>();
+		switch(str) {
+		case "day":
+			dataValues = timeStamps.getDayValues();
+			break;
+		case "week":
+			dataValues = timeStamps.getWeekValues();
+			break;
+		case "month":
+			dataValues = timeStamps.getMonthValues();
+			break;
+		case "more":
+			dataValues = timeStamps.getMonthMoreValues();
+			break;
+		case "year":
+			dataValues = timeStamps.getYearValues();
+			break;
+		default:
+			dataValues = timeStamps.getAllValues();
+			break;
+	}
+		
+		for(long value: dataValues) {
+			DataTrends data = new DataTrends();
 			Double porfolioValue = 10000*Math.random();
-			min.setPortfolioValue(Double.toString(porfolioValue));
-			min.setTimeStamp(String.valueOf(value));
-			minutes.add(min);
+			data.setPf(Double.toString(porfolioValue));
+			data.setTime(String.valueOf(value));
+			trends.add(data);
 		}
-		DayTrends day = new DayTrends();
-		day.setFifteenMinutes(minutes);
-		portfolioTrends.setDay(day);
+		portfolioTrends.setData(trends);;		
 		return portfolioTrends;
 	}
 

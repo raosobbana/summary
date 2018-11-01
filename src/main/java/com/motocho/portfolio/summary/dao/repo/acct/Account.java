@@ -1,60 +1,68 @@
 package com.motocho.portfolio.summary.dao.repo.acct;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Accounts Table Mapping
  * @author rao.sobbana@motocho.io
  * accountId, userId, cashBalance, cashCurrencyCode, status,
  * dateCreated, dateModified
  */
-public class Account {
-	private long acctId;
-	private long usrId;
-	private double cshBal;
-	private String curCod;
-	private int stat;
-	private long dtCrt;
-	private long dtMod;
 
-	public long getAcctId() {
-		return acctId;
+@Entity
+@Table(name="accounts")
+public class Account {
+	@Id
+	private long accountId;
+	private long userId;
+	private double cashBalance;
+	private String cashCurrencyCode;
+	private int status;
+	private String dateCreated;
+	private String dateModified;
+
+	public long getAccountId() {
+		return accountId;
 	}
-	public void setAcctId(long acctId) {
-		this.acctId = acctId;
+	public void setAccountId(long accountId) {
+		this.accountId = accountId;
 	}
-	public long getUsrId() {
-		return usrId;
+	public long getUserId() {
+		return userId;
 	}
-	public void setUsrId(long usrId) {
-		this.usrId = usrId;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
-	public double getCshBal() {
-		return cshBal;
+	public double getCashBalance() {
+		return cashBalance;
 	}
-	public void setCshBal(double cshBal) {
-		this.cshBal = cshBal;
+	public void setCashBalance(double cashBalance) {
+		this.cashBalance = cashBalance;
 	}
-	public String getCurCod() {
-		return curCod;
+	public String getCashCurrencyCode() {
+		return cashCurrencyCode;
 	}
-	public void setCurCod(String curCod) {
-		this.curCod = curCod;
+	public void setCashCurrencyCode(String cashCurrencyCode) {
+		this.cashCurrencyCode = cashCurrencyCode;
 	}
-	public int getStat() {
-		return stat;
+	public int getStatus() {
+		return status;
 	}
-	public void setStat(int stat) {
-		this.stat = stat;
+	public void setStatus(int status) {
+		this.status = status;
 	}
-	public long getDtCrt() {
-		return dtCrt;
+	public String getDateCreated() {
+		return dateCreated;
 	}
-	public void setDtCrt(long dtCrt) {
-		this.dtCrt = dtCrt;
+	public void setDateCreated(String dateCreated) {
+		this.dateCreated = dateCreated;
 	}
-	public long getDtMod() {
-		return dtMod;
+	public String getDateModified() {
+		return dateModified;
 	}
-	public void setDtMod(long dtMod) {
-		this.dtMod = dtMod;
+	public void setDateModified(String dateModified) {
+		this.dateModified = dateModified;
 	}
 }
