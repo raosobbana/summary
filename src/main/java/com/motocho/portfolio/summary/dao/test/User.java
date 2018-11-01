@@ -1,13 +1,9 @@
 package com.motocho.portfolio.summary.dao.test;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="users")
+/*@Entity
+@Table(name="users")*/
 public class User {
-	@Id
+	//@Id
 	private long userId;//usrId
 	private String userFirstName;//fstNme
 	private String userMiddleName;//usrMidNme

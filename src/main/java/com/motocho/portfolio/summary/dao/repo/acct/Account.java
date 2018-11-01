@@ -1,9 +1,5 @@
 package com.motocho.portfolio.summary.dao.repo.acct;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 /**
  * Accounts Table Mapping
  * @author rao.sobbana@motocho.io
@@ -11,10 +7,10 @@ import javax.persistence.Table;
  * dateCreated, dateModified
  */
 
-@Entity
-@Table(name="accounts")
+/*@Entity
+@Table(name="accounts")*/
 public class Account {
-	@Id
+	//@Id
 	private long accountId;
 	private long userId;
 	private double cashBalance;
