@@ -1,5 +1,9 @@
 package com.motocho.portfolio.summary.dao.repo.acct;
 
+/*import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;*/
+
 /**
  * Accounts Table Mapping
  * @author rao.sobbana@motocho.io
@@ -7,8 +11,8 @@ package com.motocho.portfolio.summary.dao.repo.acct;
  * dateCreated, dateModified
  */
 
-/*@Entity
-@Table(name="accounts")*/
+//@Entity
+//@Table(name="accounts")
 public class Account {
 	//@Id
 	private long accountId;
@@ -19,6 +23,23 @@ public class Account {
 	private String dateCreated;
 	private String dateModified;
 
+	public Account() {
+		super();
+	}
+
+	public Account(long accountId, long userId, 
+		double cashBalance, String cashCurrencyCode,
+		int status, String dateCreated, String dateModified) {
+
+		super();
+		this.accountId = accountId;
+		this.userId = userId;
+		this.cashBalance = cashBalance;
+		this.cashCurrencyCode = cashCurrencyCode;
+		this.status = status;
+		this.dateCreated = dateCreated;
+		this.dateModified = dateModified;
+	}
 	public long getAccountId() {
 		return accountId;
 	}

@@ -1,6 +1,5 @@
 package com.motocho.portfolio.summary.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.motocho.portfolio.summary.dao.PortfolioSummary;
 import com.motocho.portfolio.summary.dao.coinperfrm.PortfolioCoinPerformance;
 import com.motocho.portfolio.summary.dao.position.PortfolioPostion;
+import com.motocho.portfolio.summary.dao.repo.acct.Account;
 import com.motocho.portfolio.summary.dao.repo.acct.AccountRepositoy;
-import com.motocho.portfolio.summary.dao.test.UserRepositoy;
+import com.motocho.portfolio.summary.dao.repo.user.User;
+import com.motocho.portfolio.summary.dao.repo.user.UserRepositoy;
 import com.motocho.portfolio.summary.dao.trends.PortfolioTrends;
 import com.motocho.portfolio.summary.service.SummaryService;
 import com.motocho.portfolio.summary.service.account.AccountService;
@@ -30,12 +31,6 @@ public class SummaryController {
 
 	@Autowired
 	private CoinService coinService;
-	
-	/*@Autowired
-	private UserRepositoy userRepositoy;*/
-	
-	/*@Autowired
-	private AccountRepositoy accountRepositoy;*/
 
 	@GetMapping("/summary/{userId}")
 	public PortfolioSummary getSummary(@PathVariable long userId) {
@@ -52,27 +47,14 @@ public class SummaryController {
 		return summaryService.getCoinPerformance(userId);
 	}
 
-	@GetMapping("/summary/trends")
-	public PortfolioTrends getSummaryTrends(@RequestParam long userId, @RequestParam String query) {
-		return summaryService.getSummaryTrends(userId,query);
+	@GetMapping("/summary/trends/{trend}")
+	public PortfolioTrends getSummaryTrends(@PathVariable String trend,@RequestParam long userId) {
+		return summaryService.getSummaryTrends(userId,trend);
 	}
 
 	/*@PostMapping("/transactions/save")
 	public User getUsers(@RequestBody User user){
-		User user = new User();
-		user.setUserId(4);
-		user.setUserFirstName("Rajeswara");
-		user.setUserMiddleName("Rao");
-		user.setUserLastName("Sobbana");
-		user.setUserName("Rajeswara Rao Sobbana");
-		user.setPassword("indi2");
-		user.setPreviousPassword("jhbsd");
-		user.setResetPassword("mhs");
-		user.setUserRole("user");
-		user.setLoginAttempts(1);
-		user.setStatus((byte)1);
-		user.setDateCreated(new Date().getTime());
-		user.setDateCreated(new Date().getTime());
+		
 		{
 	        "userId": 1,
 	        "userFirstName": "Dwayne",
@@ -91,12 +73,13 @@ public class SummaryController {
 
 		return userRepositoy.save(user);
 	}*/
-	
+
 	/*@GetMapping("/transactions")
 	public Optional<Account> getTransactions(){
 
 		return accountRepositoy.findById(2l);
 	}*/
+
 	/*@PostMapping("/summary/add/{accountId}")
     public SummaryPosition addSummary(@PathVariable Long accountId) {
 		SummaryPosition summary = new SummaryPosition();
@@ -106,4 +89,5 @@ public class SummaryController {
 		
 		return summaryRepositoy.save(summary);
     }*/
+
 }

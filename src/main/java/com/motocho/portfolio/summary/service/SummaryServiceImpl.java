@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.motocho.portfolio.summary.dao.PortfolioSummary;
@@ -17,18 +18,45 @@ import com.motocho.portfolio.summary.dao.position.PortfolioPostion;
 import com.motocho.portfolio.summary.dao.test.TimeStamps;
 import com.motocho.portfolio.summary.dao.trends.DataTrends;
 import com.motocho.portfolio.summary.dao.trends.PortfolioTrends;
+import com.motocho.portfolio.summary.service.account.AccountService;
+import com.motocho.portfolio.summary.service.coin.CoinService;
+import com.motocho.portfolio.summary.service.position.PositionService;
 
 @Service
 public class SummaryServiceImpl implements SummaryService {
 
+	@Autowired
+	private AccountService accountService;
+	
+	@Autowired
+	private PositionService positionService;
+
+	@Autowired
+	private CoinService coinService;
+
 	@Override
 	public PortfolioSummary getSummary(long userId) {
+		/*double totalInvestment=0.0;
+		
+		double cashBalance = accountService.getCash(userId);
+		List<Object[]> positionids = positionService.getPositonIds(userId);
+		System.out.println("CashBalance :"+cashBalance);
+		for(Object[] p:positionids) {
+			long coinId =Long.parseLong(p[1].toString()) ;
+			Object coinvalues = coinService.getCoinValue(coinId);
+			double coinvalue = Double.parseDouble(coinvalues.toString());
+			double qty = Double.parseDouble(p[2].toString());
+			totalInvestment += (coinvalue*qty );
+			System.out.println(" PositionIds :"+p[0]+" CoinId:"+p[1]+" Quantity:"+p[2]+ " CoinValue:"+coinvalues);
+		}
+		System.out.println("TotalInvestment :"+totalInvestment);
+		System.out.println("TotalPortfolio Value :"+(totalInvestment+cashBalance));*/
 		PortfolioSummary portfolioSummary = new PortfolioSummary();
 		Summary summary = new Summary();
 		if(userId==1) {
-			summary.setTotalInvestment(17652.470608530024);
-			summary.setTotalCash(42150.36579250125);
-			summary.setTotalPortfolioValue(59802.83640103128);
+			summary.setTotalInvestment(28784.4748);
+			summary.setTotalCash(28784.4748);
+			summary.setTotalPortfolioValue((28784.4748));
 			UnrealizedSummary unrealizedSummary = new UnrealizedSummary();
 			unrealizedSummary.setShortTerm(26944.61335114149);
 			unrealizedSummary.setLongTerm(11994.682047118355);
@@ -37,9 +65,9 @@ public class SummaryServiceImpl implements SummaryService {
 			portfolioSummary.setPortfolioSummary(summary);
 			return portfolioSummary;
 		}else {
-			summary.setTotalInvestment(26226.402569074646);
-			summary.setTotalCash(9660.007235879099);
-			summary.setTotalPortfolioValue(35886.40980495374);
+			summary.setTotalInvestment(28784.4748);
+			summary.setTotalCash(28784.4748);
+			summary.setTotalPortfolioValue(28784.4748);
 			UnrealizedSummary unrealizedSummary = new UnrealizedSummary();
 			unrealizedSummary.setShortTerm(521.9493816632781);
 			unrealizedSummary.setLongTerm(1485.1157659664937);
@@ -296,17 +324,14 @@ public class SummaryServiceImpl implements SummaryService {
 		case "month":
 			dataValues = timeStamps.getMonthValues();
 			break;
-		case "more":
-			dataValues = timeStamps.getMonthMoreValues();
-			break;
-		case "year":
-			dataValues = timeStamps.getYearValues();
+		case "ytd":
+			dataValues = timeStamps.getYtdValues();
 			break;
 		default:
 			dataValues = timeStamps.getAllValues();
 			break;
 	}
-		
+
 		for(long value: dataValues) {
 			DataTrends data = new DataTrends();
 			Double porfolioValue = 10000*Math.random();

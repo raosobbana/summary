@@ -1,59 +1,86 @@
 package com.motocho.portfolio.summary.dao.repo;
+
+/*import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;*/
+
 /**
  * Position Table Mapping
  * @author rao.sobbana@motocho.io
  * positionId, accountId, quantity, coinId,
- * avaragePricePaid, dateCreated, dateModified
+ * averagePricePaid, dateCreated, dateModified
  */
-public class Position {
-	private long posId;
-	private long acctId;
-	private double qty;
-	private long coiId;
-	private double avgPrcPad;
-	private long dtCrt;
-	private long dtMod;
 
-	public long getPosId() {
-		return posId;
+//@Entity
+//@Table(name="position")
+public class Position {
+	//@Id
+	private long positionId;//posId
+	private long accountId;//acctId
+	private double quantity;//qty
+	private long coinId;//coiId
+	private double averagePricePaid;//avgPrcPad
+	private String dateCreated;//dtCrt
+	private String dateModified;//dtMod;
+
+	public Position() {
+		super();
 	}
-	public void setPosId(long posId) {
-		this.posId = posId;
+
+	public Position(long positionId, long accountId,
+		double quantity, long coinId, double averagePricePaid,
+		String dateCreated, String dateModified) {
+
+		super();
+		this.positionId = positionId;
+		this.accountId = accountId;
+		this.quantity = quantity;
+		this.coinId = coinId;
+		this.averagePricePaid = averagePricePaid;
+		this.dateCreated = dateCreated;
+		this.dateModified = dateModified;		
 	}
-	public long getAcctId() {
-		return acctId;
+
+	public long getPositionId() {
+		return positionId;
 	}
-	public void setAcctId(long acctId) {
-		this.acctId = acctId;
+	public void setPositionId(long positionId) {
+		this.positionId = positionId;
 	}
-	public double getQty() {
-		return qty;
+	public long getAccountId() {
+		return accountId;
 	}
-	public void setQty(double qty) {
-		this.qty = qty;
+	public void setAccountId(long accountId) {
+		this.accountId = accountId;
 	}
-	public long getCoiId() {
-		return coiId;
+	public double getQuantity() {
+		return quantity;
 	}
-	public void setCoiId(long coiId) {
-		this.coiId = coiId;
+	public void setQuantity(double quantity) {
+		this.quantity = quantity;
 	}
-	public double getAvgPrcPad() {
-		return avgPrcPad;
+	public long getCoinId() {
+		return coinId;
 	}
-	public void setAvgPrcPad(double avgPrcPad) {
-		this.avgPrcPad = avgPrcPad;
+	public void setCoinId(long coinId) {
+		this.coinId = coinId;
 	}
-	public long getDtCrt() {
-		return dtCrt;
+	public double getAveragePricePaid() {
+		return averagePricePaid;
 	}
-	public void setDtCrt(long dtCrt) {
-		this.dtCrt = dtCrt;
+	public void setAveragePricePaid(double averagePricePaid) {
+		this.averagePricePaid = averagePricePaid;
 	}
-	public long getDtMod() {
-		return dtMod;
+	public String getDateCreated() {
+		return dateCreated;
 	}
-	public void setDtMod(long dtMod) {
-		this.dtMod = dtMod;
+	public void setDateCreated(String dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+	public String getDateModified() {
+		return dateModified;
+	}
+	public void setDateModified(String dateModified) {
+		this.dateModified = dateModified;
 	}
 }

@@ -1,81 +1,109 @@
 package com.motocho.portfolio.summary.dao.repo.coin;
 
+
 /**
  * Coin Table Mapping
  * @author rao.sobbana@motocho.io
- * coinId, coinName, coinCode, coinValue, isCoinTradable, isCoinQuotable,
- * decimalMaxLength, status, dateCreated, dateModified
+ * coinId, coinName, coinCode, coinValue, isCoinTradable, 
+ * isCoinQuotable, decimalMaxLength, status, dateCreated,
+ * dateModified
  */
-public class Coin {
-	private long coiId;
-	private String coiNme;
-	private String coiCod;
-	private double coiVal;
-	private byte isTrdble;
-	private byte isQutble;
-	private long decMaxLen;
-	private byte stat;
-	private long dtCrt;
-	private long dtMod;
 
-	public long getCoiId() {
-		return coiId;
+//@Entity
+//@Table(name="coin")
+public class Coin {
+	//@Id
+	private long coinId;//coiId
+	private String coinName;//coiNme
+	private String coinCode;//coiCod
+	private double coinValue;//coiVal
+	private byte isCoinTradable;//isTrdble
+	private byte isCoinQuotable;//isQutble
+	private long decimalMaxLength;//decMaxLen
+	private byte status;//stat
+	private long dateCreated;//dtCrt
+	private long dateModified;//dtMod
+
+	public Coin() {
+		super();
 	}
-	public void setCoiId(long coiId) {
-		this.coiId = coiId;
+
+	public Coin(long coinId, String coinName, String coinCode,
+		double coinValue, byte isCoinTradable,
+		byte isCoinQuotable, long decimalMaxLength,
+		byte status, long dateCreated, long dateModified) {
+
+		super();
+		this.coinId = coinId;
+		this.coinName = coinName;
+		this.coinCode = coinCode;
+		this.coinValue = coinValue;
+		this.isCoinTradable = isCoinTradable;
+		this.isCoinQuotable = isCoinQuotable;
+		this.decimalMaxLength = decimalMaxLength;
+		this.status = status;
+		this.dateCreated = dateCreated;
+		this.dateModified = dateModified;
 	}
-	public String getCoiNme() {
-		return coiNme;
+
+	public long getCoinId() {
+		return coinId;
 	}
-	public void setCoiNme(String coiNme) {
-		this.coiNme = coiNme;
+	public void setCoinId(long coinId) {
+		this.coinId = coinId;
 	}
-	public String getCoiCod() {
-		return coiCod;
+	public String getCoinName() {
+		return coinName;
 	}
-	public void setCoiCod(String coiCod) {
-		this.coiCod = coiCod;
+	public void setCoinName(String coinName) {
+		this.coinName = coinName;
 	}
-	public double getCoiVal() {
-		return coiVal;
+	public String getCoinCode() {
+		return coinCode;
 	}
-	public void setCoiVal(double coiVal) {
-		this.coiVal = coiVal;
+	public void setCoinCode(String coinCode) {
+		this.coinCode = coinCode;
 	}
-	public byte getIsTrdble() {
-		return isTrdble;
+	public double getCoinValue() {
+		return coinValue;
 	}
-	public void setIsTrdble(byte isTrdble) {
-		this.isTrdble = isTrdble;
+	public void setCoinValue(double coinValue) {
+		this.coinValue = coinValue;
 	}
-	public byte getIsQutble() {
-		return isQutble;
+	public byte getIsCoinTradable() {
+		return isCoinTradable;
 	}
-	public void setIsQutble(byte isQutble) {
-		this.isQutble = isQutble;
+	public void setIsCoinTradable(byte isCoinTradable) {
+		this.isCoinTradable = isCoinTradable;
 	}
-	public long getDecMaxLen() {
-		return decMaxLen;
+	public byte getIsCoinQuotable() {
+		return isCoinQuotable;
 	}
-	public void setDecMaxLen(long decMaxLen) {
-		this.decMaxLen = decMaxLen;
+	public void setIsCoinQuotable(byte isCoinQuotable) {
+		this.isCoinQuotable = isCoinQuotable;
 	}
-	public byte getStat() {
-		return stat;
+	public long getDecimalMaxLength() {
+		return decimalMaxLength;
 	}
-	public void setStat(byte stat) {
-		this.stat = stat;
+	public void setDecimalMaxLength(long decimalMaxLength) {
+		this.decimalMaxLength = decimalMaxLength;
 	}
-	public long getDtCrt() {
-		return dtCrt;
+	public byte getStatus() {
+		return status;
 	}
-	public void setDtCrt(long dtCrt) {
-		this.dtCrt = dtCrt;
+	public void setStatus(byte status) {
+		this.status = status;
 	}
-	public long getDtMod() {
-		return dtMod;
+	public long getDateCreated() {
+		return dateCreated;
 	}
-	public void setDtMod(long dtMod) {
-		this.dtMod = dtMod;
+	public void setDateCreated(long dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+	public long getDateModified() {
+		return dateModified;
+	}
+	public void setDateModified(long dateModified) {
+		this.dateModified = dateModified;
 	}
 }

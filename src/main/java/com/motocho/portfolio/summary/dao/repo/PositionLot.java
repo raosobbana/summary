@@ -1,44 +1,72 @@
 package com.motocho.portfolio.summary.dao.repo;
 
+/*import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;*/
+
 /**
  * Position_Lot Table Mapping
  * @author rao.sobbana@motocho.io
  * positionLotId, positionId, dateAcquired, quantity, fee,
  * pricePaid, dateCreated, dateModified
  */
-public class PositionLot {
-	private long posLotId;
-	private long posId;
-	private long dtAcq;
-	private float qty;
-	private double fee;
-	private double prcPad;
-	private long dtCrt;
-	private long dtMod;
 
-	public long getPosLotId() {
-		return posLotId;
+//@Entity
+//@Table(name="position_lot")
+public class PositionLot {
+	//@Id
+	private long positionLotId;//posLotId
+	private long positionId;//posId
+	private String dateAcquired;//dtAcq
+	private float quantity;//qty
+	private double fee;//fee
+	private double pricePaid;//prcPad
+	private String dateCreated;//dtCrt
+	private String dateModified;//dtMod
+
+	public PositionLot() {
+		super();
 	}
-	public void setPosLotId(long posLotId) {
-		this.posLotId = posLotId;
+
+	public PositionLot(long positionLotId, long positionId,
+		String dateAcquired, float quantity, double fee,
+		double pricePaid, String dateCreated,
+		String dateModified) {
+
+		super();
+		this.positionLotId = positionLotId;
+		this.positionId = positionId;
+		this.dateAcquired = dateAcquired;
+		this.quantity = quantity;
+		this.fee = fee;
+		this.pricePaid = pricePaid;
+		this.dateCreated = dateCreated;
+		this.dateModified = dateModified;
 	}
-	public long getPosId() {
-		return posId;
+
+	public long getPositionLotId() {
+		return positionLotId;
 	}
-	public void setPosId(long posId) {
-		this.posId = posId;
+	public void setPositionLotId(long positionLotId) {
+		this.positionLotId = positionLotId;
 	}
-	public long getDtAcq() {
-		return dtAcq;
+	public long getPositionId() {
+		return positionId;
 	}
-	public void setDtAcq(long dtAcq) {
-		this.dtAcq = dtAcq;
+	public void setPositionId(long positionId) {
+		this.positionId = positionId;
 	}
-	public float getQty() {
-		return qty;
+	public String getDateAcquired() {
+		return dateAcquired;
 	}
-	public void setQty(float qty) {
-		this.qty = qty;
+	public void setDateAcquired(String dateAcquired) {
+		this.dateAcquired = dateAcquired;
+	}
+	public float getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(float quantity) {
+		this.quantity = quantity;
 	}
 	public double getFee() {
 		return fee;
@@ -46,22 +74,22 @@ public class PositionLot {
 	public void setFee(double fee) {
 		this.fee = fee;
 	}
-	public double getPrcPad() {
-		return prcPad;
+	public double getPricePaid() {
+		return pricePaid;
 	}
-	public void setPrcPad(double prcPad) {
-		this.prcPad = prcPad;
+	public void setPricePaid(double pricePaid) {
+		this.pricePaid = pricePaid;
 	}
-	public long getDtCrt() {
-		return dtCrt;
+	public String getDateCreated() {
+		return dateCreated;
 	}
-	public void setDtCrt(long dtCrt) {
-		this.dtCrt = dtCrt;
+	public void setDateCreated(String dateCreated) {
+		this.dateCreated = dateCreated;
 	}
-	public long getDtMod() {
-		return dtMod;
+	public String getDateModified() {
+		return dateModified;
 	}
-	public void setDtMod(long dtMod) {
-		this.dtMod = dtMod;
+	public void setDateModified(String dateModified) {
+		this.dateModified = dateModified;
 	}
 }
