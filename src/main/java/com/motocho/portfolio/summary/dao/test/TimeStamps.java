@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -44,6 +45,8 @@ public class TimeStamps {
 			}
 			//counter++;
 		}
+		
+		Collections.reverse(list); 
 		return list;
 	
 	}
@@ -75,6 +78,7 @@ public class TimeStamps {
 			}
 			//counter++;
 		}
+		Collections.reverse(list); 
 		return list;
 	}
 
@@ -106,6 +110,7 @@ public class TimeStamps {
 			}
 			//counter++;
 		}
+		Collections.reverse(list); 
 		return list;
 	}
 
@@ -137,6 +142,7 @@ public class TimeStamps {
 				e.printStackTrace();
 			}
 		}
+		Collections.reverse(list); 
 		return list;
 	}
 
@@ -165,6 +171,7 @@ public class TimeStamps {
 				e.printStackTrace();
 			}
 		}
+		Collections.reverse(list); 
 		return list;
 	}
 
